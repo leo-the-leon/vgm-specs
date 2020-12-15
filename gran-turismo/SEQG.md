@@ -8,6 +8,7 @@ Format
 Despite the extension being .SEQ, it doesn't have much to do with Sony's standard .SEQ (SEQp) format. There are lots of differences between the two:
 - SEQp is singletrack (like SMF type 0,) SEQG is multitrack with a global tempo value (like SMF type 1)
 - SEQp makes actual sense, SEQG is made by PD
+
 GT3/C's version of SEQG has multiple sequences in one file, similar to Sony's .SEP format. Otherwise, the sequence format is untouched.
 
 Header:
