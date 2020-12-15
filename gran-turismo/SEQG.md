@@ -11,7 +11,8 @@ Despite the extension being .SEQ, it doesn't have much to do with Sony's standar
 
 GT3/C's version of SEQG has multiple sequences in one file, similar to Sony's .SEP format. Otherwise, the sequence format is untouched.
 
-Header:
+Header
+------
 
 WARNING: Some speculation here
 
@@ -23,7 +24,8 @@ WARNING: Some speculation here
 |  0x10|     3|Tempo value (PPQN?)        |
 |  0x13|     N|Offset lists? NRPN stuff?  |
 
-Sequence:
+Sequence
+--------
 
 WARNING: Some speculation here too
 
