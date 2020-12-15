@@ -7,16 +7,14 @@ Format
 
 .INS is a modified variant of Sony's VAB format, and thus is quite similar to it, but the VH part is nonstandard and thus will not work properly with tools like VABTool or Awave Studio.
 
-###Header
+Header:
 
 |Offset|Length|Description      |
 |------|------|-----------------|
 |  0x00|     4|Identifier (INST)|
 |  0x04|     N|???              |
 
-###Instruments
-
-Note: Most of this is a guess and doesn't make any sense as I have no idea where the parameters actually start and end.
+Instruments (please note that most of this is a guess and doesn't make any sense as I have no idea where the parameters actually start and end:)
 
 |Offset|Length|Type   |Description                               |
 |------|------|-------|------------------------------------------|
