@@ -16,20 +16,24 @@ Header
 
 WARNING: Some speculation here
 
-|Offset|Length|Description                |
-|------|------|---------------------------|
-|  0x00|     4|Identifier (SEQG)          |
-|  0x08|      |Breaks stuff, or something |
-|  0x0D|     1|Global volume (GT2 uses 40)|
-|  0x10|     3|Tempo value (PPQN?)        |
-|  0x13|     N|Offset lists? NRPN stuff?  |
+|Offset|Length|Description                                    |
+|------|------|-----------------------------------------------|
+|  0x00|     4|Identifier (SEQG)                              |
+|  0x08|      |Breaks stuff, or something                     |
+|  0x0D|     1|Global volume (40 is used, doesn't work in GT1)|
+|  0x10|     3|Tempo value (PPQN?)                            |
+|  0x13|     N|Offset lists? NRPN stuff?                      |
 
 Sequence
 --------
 
 WARNING: Some speculation here too
 
-Each track starts with the 4-byte sequence 00 00 00 03, except for spu_04.seq in GT2, which uses 00 00 78 03 for the first track.
+The sequences are split into multiple tracks:
+|Sequence   |Description   |
+|-----------|--------------|
+|00 00 00 03|Start of track|
+|01 02      |End of track  |
 
 There aren't any note-on events(?) unike standard SEQ, notes and time are just stored in pairs, with the delta time first and then succeeded by the note value. Functionally, they're 7bit values in a single byte, with the sign(?) indicating which type of value it is:
 
