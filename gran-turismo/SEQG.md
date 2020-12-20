@@ -42,9 +42,9 @@ The delta time is variable length, as having two time values next to each other 
 
 There are also MIDI messages, which in GT1/2/2K SEQs are usually found at the beginning of each track. They are 3 bytes long, starting with 00 and then followed by status and 7bit (0-127) data bytes. The available status are:
 
-|Function|Description    |
-|--------|---------------|
-|03      |Program Change |
-|04      |Volume         |
-|05      |Panning        |
-|06      |Tempo          |
+|Status|Description    |
+|------|---------------|
+|03    |Program Change |
+|04    |Volume         |
+|05    |Panning        |
+|06    |Tempo          |
