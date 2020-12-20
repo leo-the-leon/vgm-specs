@@ -1,6 +1,6 @@
 Gran Turismo 1-3 SEQG Notes
 ===========================
-Gran Turismo 1, 2, 3 and Concept use SEQG as their sequence format, with a .SEQ extension.
+Gran Turismo 1, 2, 2000, 3 and Concept use SEQG as their sequence format, with a .SEQ extension.
 
 Format
 ------
@@ -29,11 +29,7 @@ Sequence
 
 WARNING: Some speculation here too
 
-The sequences are split into multiple tracks:
-|Sequence   |Description   |
-|-----------|--------------|
-|00 00 00 03|Start of track|
-|01 02      |End of track  |
+The sequence data always starts at 0x54, with an 01 02 00 00 sequence marking the end of each track.
 
 There aren't any note-on events(?) unike standard SEQ, notes and time are just stored in pairs, with the delta time first and then succeeded by the note value. Functionally, they're 7bit values in a single byte, with the sign(?) indicating which type of value it is:
 
@@ -43,3 +39,12 @@ There aren't any note-on events(?) unike standard SEQ, notes and time are just s
 |80-FF|Note       |
 
 The delta time is variable length, as having two time values next to each other results in a 14bit value.
+
+There are also MIDI messages, which in GT1/2/2K SEQs are usually found at the beginning of each track. They are 3 bytes long, starting with 00 and then followed by status and 7bit (0-127) data bytes. The available status are:
+
+|Function|Description    |
+|--------|---------------|
+|03      |Program Change |
+|04      |Volume         |
+|05      |Panning        |
+|06      |Tempo          |
