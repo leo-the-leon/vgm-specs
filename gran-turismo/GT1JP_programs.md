@@ -1,13 +1,13 @@
 For SEQ program change message:
 |Value|Name                                                                    |
 |-----|------------------------------------------------------------------------|
-|01   |Drumkit 2                                                               |
-|02   |Drumkit 3                                                               |
-|03   |Drumkit 4                                                               |
+|01   |Drumkit                                                                 |
+|02   |Drumkit 2                                                               |
+|03   |Drumkit 3                                                               |
 |04   |???                                                                     |
 |05   |???                                                                     |
-|06   |Drumkit 5                                                               |
-|07   |Drumkit 5                                                               |
+|06   |Drumkit 4                                                               |
+|07   |Drumkit 4                                                               |
 |08   |???                                                                     |
 |09   |Shaker?                                                                 |
 |0A   |Fingered Bass                                                           |
