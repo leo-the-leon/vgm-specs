@@ -22,7 +22,7 @@ WARNING: Some speculation here
 |  0x08|      |Breaks stuff, or something                     |
 |  0x0D|     1|Global volume (40 is used, doesn't work in GT1)|
 |  0x10|     3|Tempo value (PPQN?)                            |
-|  0x13|     N|Offset lists? NRPN stuff?                      |
+|  0x13|  4*16|Delta time offset per track from start of song |
 
 Sequence
 --------
