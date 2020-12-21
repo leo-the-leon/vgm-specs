@@ -48,4 +48,5 @@ For SEQ program change message:
 |2D |45 |Synth Brass 3 (slightly different mapping?)                             |
 |2E |46 |Synth Brass 3 (hard left)                                               |
 |2F |47 |really quiet Acoustic Piano + Brass Section + Toms on some notes (?????)|
+
 For equivalent program from gtseq2midi conversions, subtract 1 from exported midi program
