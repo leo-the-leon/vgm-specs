@@ -44,6 +44,8 @@ There are also MIDI messages, which in GT1/2/2K SEQs are usually found at the be
 
 |Status|Description    |
 |------|---------------|
+|01    |Start of loop  |
+|02    |End of track   |
 |03    |Program Change |
 |04    |Volume         |
 |05    |Panning        |
