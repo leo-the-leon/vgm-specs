@@ -35,22 +35,24 @@ Sequence
 
 WARNING: Some speculation here too
 
-There aren't any note-on events(?) unike standard SEQ, notes and time are just stored in pairs, with the delta time first and then succeeded by the note value. Functionally, they're 7bit values in a single byte, with the sign(?) indicating which type of value it is:
+There aren't any note-on events unike standard SEQ, notes and time are just stored in pairs, with the delta time first and then succeeded by the note value. Functionally, they're 7bit values in a single byte, with the sign(?) indicating which type of value it is:
 
-|Value|Description|
-|-----|-----------|
-|00-7F|Delta time |
-|80-FF|Note       |
+|Value|Description                        |
+|-----|-----------------------------------|
+|00-7F|Delta time, velocity, note duration|
+|80-FF|Note                               |
 
 The delta time is variable length, as having two time values next to each other results in a 14bit value.
 
+The note value can also be succeeded by a velocity value, and then after that a note duration. In this case, 00 (to 03ish?) is needed to seperate the notes. 
+
 There are also events, which in GT1/2/2K SEQs are usually found at the beginning of each track. They are 3 bytes long, starting with 00 and then followed by type and 7bit (0-127) value bytes. The available types are:
 
-|Type|Description    |
-|----|---------------|
-|01  |Start of loop  |
-|02  |End of track   |
-|03  |Program Change |
-|04  |Volume         |
-|05  |Panning        |
-|06  |Tempo (unused) |
+|Type|Description    |Notes                                |
+|----|---------------|-------------------------------------|
+|01  |Loop marker    |First marker value is number of loops|
+|02  |End of track   |                                     |
+|03  |Program Change |Starts from 01(?)                    |
+|04  |Volume         |                                     |
+|05  |Panning        |                                     |
+|06  |Tempo          |I don't think this is used           |
