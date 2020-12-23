@@ -21,7 +21,7 @@ For GT1, 2 and 2000:
 |Offset|Length|Description                                    |
 |------|------|-----------------------------------------------|
 |  0x00|     4|Identifier (SEQG)                              |
-|  0x04      4|Offset to ???                                  |
+|  0x04|     4|Offset to ???                                  |
 |  0x08|      |Breaks stuff, or something                     |
 |  0x0D|     1|Global volume (40 is used, doesn't work in GT1)|
 |  0x10|     3|Tempo value (PPQN?)                            |
