@@ -9,27 +9,31 @@ Despite the extension being .SEQ, it doesn't have much to do with Sony's standar
 - SEQp is singletrack (like SMF type 0,) SEQG is multitrack with a global tempo value (like SMF type 1)
 - SEQp makes actual sense, SEQG is made by PD
 
-GT3/C's version of SEQG has multiple sequences in one file, similar to Sony's .SEP format. Otherwise, the sequence format is untouched.
+GT3/C's version of SEQG has multiple sequences in one file, similar to Sony's .SEP format. Otherwise, the format is similar.
 
 Header
 ------
 
 WARNING: Some speculation here
 
+For GT1, 2 and 2000:
+
 |Offset|Length|Description                                    |
 |------|------|-----------------------------------------------|
 |  0x00|     4|Identifier (SEQG)                              |
+|  0x04      4|Offset to ???                                  |
 |  0x08|      |Breaks stuff, or something                     |
 |  0x0D|     1|Global volume (40 is used, doesn't work in GT1)|
 |  0x10|     3|Tempo value (PPQN?)                            |
-|  0x13|  4*16|Delta time offset per track from start of song |
+|  0x14|  4*16|Offset to tracks                               |
+|  0x54|     N|Beginning of sequence data                     |
+
+It is important to note that GT1 loads all SEQs at once and keeps the track offsets relative to the files (unmodified,) while GT2 loads one SEQ and overwrites the track offsets with absolute ones.
 
 Sequence
 --------
 
 WARNING: Some speculation here too
-
-The sequence data always starts at 0x54, with an 01 02 00 00 sequence marking the end of each track.
 
 There aren't any note-on events(?) unike standard SEQ, notes and time are just stored in pairs, with the delta time first and then succeeded by the note value. Functionally, they're 7bit values in a single byte, with the sign(?) indicating which type of value it is:
 
@@ -40,13 +44,13 @@ There aren't any note-on events(?) unike standard SEQ, notes and time are just s
 
 The delta time is variable length, as having two time values next to each other results in a 14bit value.
 
-There are also MIDI messages, which in GT1/2/2K SEQs are usually found at the beginning of each track. They are 3 bytes long, starting with 00 and then followed by status and 7bit (0-127) data bytes. The available status are:
+There are also events, which in GT1/2/2K SEQs are usually found at the beginning of each track. They are 3 bytes long, starting with 00 and then followed by type and 7bit (0-127) value bytes. The available types are:
 
-|Status|Description    |
-|------|---------------|
-|01    |Start of loop  |
-|02    |End of track   |
-|03    |Program Change |
-|04    |Volume         |
-|05    |Panning        |
-|06    |Tempo          |
+|Type|Description    |
+|----|---------------|
+|01  |Start of loop  |
+|02  |End of track   |
+|03  |Program Change |
+|04  |Volume         |
+|05  |Panning        |
+|06  |Tempo (unused) |
