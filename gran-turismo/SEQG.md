@@ -35,7 +35,7 @@ Sequence
 
 WARNING: Some speculation here too
 
-There aren't any note-on events unike standard SEQ, notes and time are just stored in pairs, with the delta time first and then succeeded by the note value. Functionally, they're 7bit values in a single byte, with the sign(?) indicating which type of value it is:
+There aren't any note-on events unike standard SEQ, notes and time are just stored in pairs, with the delta time first and then succeeded by the note value. Functionally, they're 7bit values in a single byte, with the signing bit indicating which type of value it is:
 
 |Value|Description                        |
 |-----|-----------------------------------|
@@ -44,7 +44,7 @@ There aren't any note-on events unike standard SEQ, notes and time are just stor
 
 The delta time is variable length, as having two time values next to each other results in a 14bit value.
 
-The note value can also be succeeded by a velocity value, and then after that a note duration. In this case, 00 (to 03ish?) is needed to seperate the notes. 
+The note value can also be succeeded by a velocity value, and then after that a note duration.
 
 There are also events, which in GT1/2/2K SEQs are usually found at the beginning of each track. They are 3 bytes long, starting with 00 and then followed by type and 7bit (0-127) value bytes. The available types are:
 
