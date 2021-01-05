@@ -5,7 +5,7 @@ Both OPTION Tuning Car Battle 2 and Spec-R store sequenced music in .SHB files, 
 Format
 ------
 
-.SHB files store generic SEQ/VH/VB pairs, with a 12-byte header containing offsets relative to the very start of the file (aka including the header.)
+.SHB files store generic SEQ/VH/VB pairs, with a 12-byte header containing absolute offsets.
 
 |Offset|Length|Description                                                      |
 |------|------|-----------------------------------------------------------------|
