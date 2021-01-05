@@ -10,5 +10,5 @@ Format
 |Offset|Length|Description                                                      |
 |------|------|-----------------------------------------------------------------|
 |  0x00|     4|Offset to SEQ (identifier included, redundant as all are at 0x0C)|
-|  0x04|     4|Offset to VH (identifier excluded)                               |
-|  0x08|     4|Offset to VB (8 bytes before start of wave data)                 |
+|  0x04|     4|Offset to VH (identifier included)                               |
+|  0x08|     4|Offset to VB (16 bytes before start of wave data)                |
