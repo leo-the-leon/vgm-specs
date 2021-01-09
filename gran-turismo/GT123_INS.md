@@ -9,12 +9,15 @@ Format
 
 Header:
 
-|Offset|Length|Description      |
-|------|------|-----------------|
-|  0x00|     4|Identifier (INST)|
-|  0x04|     N|???              |
+|Offset|Length|Description                  |
+|------|------|-----------------------------|
+|  0x00|     4|Identifier (INST)            |
+|  0x04|     4|Offset to start of file (0x0)|
+|  0x08|     4|Offset to end of parameters  |
+|  0x14|     4|Offset to end of parameters  |
+|  0x28|     4|Start of parameters          |
 
-Instruments (please note that most of this is a guess and doesn't make any sense as I have no idea where the parameters actually start and end:)
+Instruments (TO-DO: rearrange these in the correct order):
 
 |Offset|Length|Type   |Description                               |
 |------|------|-------|------------------------------------------|
