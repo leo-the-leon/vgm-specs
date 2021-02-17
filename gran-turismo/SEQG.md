@@ -28,7 +28,7 @@ For GT1, 2 and 2000:
 |  0x14|  4*16|Offset to tracks                               |
 |  0x54|     N|Beginning of sequence data                     |
 
-It is important to note that GT1 loads all SEQs at once and keeps the track offsets relative to the files (unmodified,) while GT2 loads one SEQ and overwrites the track offsets with absolute ones.
+It is important to note that GT1 loads all SEQs at once, while GT2 only loads one. GT1 only overwrites relative (to the file) offsets with absolute ones once the SEQ that has them starts playing.
 
 Sequence
 --------
