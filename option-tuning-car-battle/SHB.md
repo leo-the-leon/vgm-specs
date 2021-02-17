@@ -7,8 +7,8 @@ Format
 
 .SHB files store generic SEQ/VH/VB pairs, with a 12-byte header containing absolute offsets.
 
-|Offset|Length|Description                                                      |
-|------|------|-----------------------------------------------------------------|
-|  0x00|     4|Offset to SEQ (identifier included, redundant as all are at 0x0C)|
-|  0x04|     4|Offset to VH (identifier included)                               |
-|  0x08|     4|Offset to VB (16 bytes before start of wave data)                |
+|Offset|Length|Description                                      |
+|------|------|-------------------------------------------------|
+|  0x00|     4|Offset to SEQ (redundant as all are at 0x0C)     |
+|  0x04|     4|Offset to VH                                     |
+|  0x08|     4|Offset to VB (16 bytes before start of wave data)|
