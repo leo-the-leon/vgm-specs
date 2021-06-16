@@ -22,9 +22,9 @@ For GT1, 2 and 2000:
 |------|------|-----------------------------------------------|
 |  0x00|     4|Identifier (SEQG)                              |
 |  0x04|     4|Offset to start of file                        |
-|  0x08|      |Breaks stuff, or something                     |
-|  0x0D|     1|Global volume (40 is used, doesn't work in GT1)|
-|  0x10|     3|Tempo value (PPQN?)                            |
+|  0x08|     4|Breaks stuff, or something                     |
+|  0x0D|     4|Global volume (40 is used, doesn't work in GT1)|
+|  0x10|     4|Tempo value (PPQN?)                            |
 |  0x14|  4*16|Offset to tracks                               |
 |  0x54|     N|Beginning of sequence data                     |
 
@@ -35,7 +35,7 @@ Sequence
 
 WARNING: Some speculation here too
 
-There aren't any note-on events unike standard SEQ, notes and time are just stored in pairs, with the delta time first and then succeeded by the note value. Functionally, they're 7bit values in a single byte, with the signing bit indicating which type of value it is:
+There aren't any note-on events unike standard SEQ, notes and time are just stored in pairs, with the delta time first and then succeeded by the note value. Functionally, they're 7bit values in a single byte, with the first bit indicating which type of value it is:
 
 |Value|Description                        |
 |-----|-----------------------------------|
