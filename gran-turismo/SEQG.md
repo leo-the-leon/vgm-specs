@@ -28,7 +28,9 @@ For GT1, 2 and 2000:
 |  0x14|  4*16|Offset to tracks                               |
 |  0x54|     N|Beginning of sequence data                     |
 
-It is important to note that GT1 loads all SEQs at once, while GT2 only loads one. GT1 only overwrites relative (to the file) offsets with absolute ones once the SEQ that has them starts playing.
+Some sidenotes:
+- GT1 loads all SEQs at once, while GT2 only loads one. GT1 only overwrites relative (to the file) offsets with absolute ones once the SEQ starts playing.
+- GT2K seems to calculate tempo differently compared to GT1/2. Xan's gtseq2midi program uses 240000000 divided by the SEQ tempo to get the true BPM, 144000000 seems to be somewhat accurate for GT2K? (needs further testing)
 
 Sequence
 --------
